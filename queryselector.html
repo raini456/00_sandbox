@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+ <head>
+  <title>TODO supply a title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+   [data-status="warning"] {
+    color: red;
+   }
+   
+   
+  </style>
+  
+  
+  
+  
+  
+ </head>
+ <body>
+  <button>#eins</button>
+  <button data-value="2" data-status="warning">#zwei</button>
+
+  <div data-value="300" id="divBtn">OK</div>
+
+
+  <script>
+   (function () {
+
+    //var btn = document.querySelector('button');
+    //var btn = document.getElementsByTagName('button')[0];
+    var divBtn = document.querySelector('#divBtn');
+
+    var btns = document.querySelectorAll('button');
+
+    btns[0].onclick = function (evt) {
+     var that = this;
+     fx.call(divBtn, evt);
+    };
+
+    btns[1].onclick = fx;
+
+    function fx(e) {
+     console.log(this.getAttribute('data-value'));
+     console.log(e)
+    }
+
+
+
+   })();
+
+
+
+
+  </script>
+
+ </body>
+</html>

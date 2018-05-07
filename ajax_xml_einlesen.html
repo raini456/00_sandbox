@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>XML einlesen mit AJAX</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ </head>
+ <body>
+
+  <script>
+   var xhr = new XMLHttpRequest();
+   xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+     var doc = xhr.responseXML;
+     //console.log(doc);
+     var c = doc.getElementsByTagName('country');
+     //console.log(c);
+     for (var i = 0; i < c.length; i++) {//<country>
+      var n = c[i].getElementsByTagName('name');//<country> <name>
+      var p = c[i].getElementsByTagName('population');//<country> <name>
+      var code = c[i].getAttribute('code');
+      console.log(code, n[0].innerHTML + ': ' + p[0].innerHTML);
+     }
+    }
+   };
+   xhr.open('get', 'countries.xml', true);
+   xhr.send(null);
+  </script>
+
+
+
+ </body>
+</html>

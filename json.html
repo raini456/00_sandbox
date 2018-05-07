@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>JSON</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ </head>
+ <body>
+
+  <script>
+   
+   //console.log(eval('[555,333]'));
+   
+   
+   
+   //var jsonstr = '[123,456]';
+   var jsonstr = '[{"country":"Italy","iso2":"IT","pop":20000},{"country":"Spain","iso2":"ES","pop":60000}]';
+   var o = JSON.parse(jsonstr);
+   console.log(o);
+   for (var i = 0; i < o.length; i++) {
+    console.log(o[i]['pop']); //o[i].iso2
+   }
+   
+  </script>
+
+ </body>
+</html>

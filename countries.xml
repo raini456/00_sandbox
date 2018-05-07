@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<countries>
+ <country code="AF">
+  <name>Afghanistan</name>
+  <population>5000000.00</population>
+ </country>
+ <country code="AX">
+  <name>Aland</name>
+  <population data-type="integer">10500</population>
+ </country>
+</countries>
